@@ -1,0 +1,418 @@
+@use "vars" as v;
+
+.header {
+  background: v.$bg;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 15px;
+  }
+}
+
+.logo {
+  &__img {
+    max-width: 143px;
+    max-height: 35px;
+    fill: v.$green;
+  }
+}
+
+.menu {
+  &__list {
+    display: flex;
+    gap: 0 60px;
+  }
+
+  &__link {
+    &:hover {
+      color: v.$green;
+    }
+
+    &:active {
+      color: v.$colorBtnActive;
+    }
+
+    &:focus {
+      background: v.$colorBtnFocus;
+    }
+  }
+}
+
+.cart {
+  &__icon {
+    width: 22px;
+    height: 22px;
+    fill: transparent;
+    stroke: v.$black;
+    stroke-width: 2;
+  }
+
+  &__link {
+    &:hover .cart__icon {
+      stroke: v.$green;
+    }
+
+    &:active .cart__icon {
+      stroke: v.$colorBtnActive;
+    }
+
+    &:focus .cart__icon {
+      background: v.$colorBtnFocus;
+    }
+  }
+}
+
+.hero {
+  &__inner {
+    margin-bottom: 70px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    gap: 0 30px;
+  }
+
+  &__image {
+    max-width: 540px;
+    max-height: 620px;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  &__content {
+    max-width: 540px;
+  }
+
+  &__title {
+    @include v.ralewayMedium;
+    font-size: 60px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+
+    span {
+      color: v.$green;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__subtitle {
+    @include v.ralewayMedium;
+    font-size: 18px;
+    line-height: 1.5;
+    color: v.$grey;
+    margin-bottom: 60px;
+  }
+}
+
+.catalog {
+  &__inner {
+    margin-bottom: 70px;
+    padding: 0 15px;
+  }
+
+  &__tabs-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__tabs {
+    display: flex;
+    gap: 0 32px;
+  }
+
+  &__tab {
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: v.$colorBtnFocus;
+    box-shadow: inset 0 0 0 0 transparent;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      background: v.$green;
+      color: v.$white;
+    }
+
+    &:focus {
+      background: v.$colorBtnFocus;
+      color: v.$black;
+      box-shadow: inset 0 0 0 2px v.$green;
+      outline: 2px solid v.$green;
+    }
+
+    &:active,
+    &--active {
+      background: v.$colorBtnActive;
+      color: v.$white;
+    }
+  }
+
+  &__panel-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  &__item {
+    width: 350px;
+    padding: 20px 20px 30px;
+    background: v.$bg;
+    line-height: 1.16;
+  }
+
+  &__image {
+    display: inline-block;
+    width: 310px;
+    height: 422px;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+
+  &__item-author {
+    color: v.$grey;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  &__item-title {
+    @include v.ralewayMedium;
+    font-size: 30px;
+    margin-bottom: 8px;
+  }
+
+  &__item-details {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+
+  &__item-price {
+    font-size: 24px;
+    color: v.$green;
+    margin-bottom: 20px;
+  }
+
+  &__item-button {
+    width: 100%;
+  }
+}
+
+.promo {
+  @include v.background-webp("../images/promo-bg");
+
+  &__inner {
+    color: #fff;
+    padding: 70px 15px;
+    margin-bottom: 70px;
+  }
+
+  &__box-title {
+    display: flex;
+    max-width: 540px;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  &__icon {
+    fill: none;
+    stroke: v.$orange;
+    stroke-width: 3;
+    max-width: 80px;
+    max-height: 80px;
+  }
+
+  &__title {
+    line-height: 1;
+    color: #f4f6f5;
+  }
+
+  &__text {
+    max-width: 540px;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 60px;
+
+    p + p {
+      margin-top: 20px;
+    }
+  }
+
+  &__button {
+    padding: 21px 60px;
+    background: v.$orange;
+    box-shadow: inset 0 0 0 0 transparent;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      background: #faeb97;
+      box-shadow: inset 0 0 0 1px v.$black;
+    }
+
+    &:focus {
+      box-shadow: inset 0 0 0 1px #a38314;
+      background: #faeb97;
+    }
+
+    &:active {
+      background: #d9b949;
+      box-shadow: inset 0 0 0 0 transparent;
+    }
+  }
+}
+
+.teams {
+  &__inner {
+    padding: 0 15px;
+    display: flex;
+    align-items: flex-end;
+    gap: 30px;
+    margin-bottom: 70px;
+  }
+
+  &__image {
+    max-width: 445px;
+    max-height: 440px;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  &__content {
+    margin-bottom: 45px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  &__list {
+    display: flex;
+    gap: 30px;
+  }
+}
+
+.footer {
+  background: v.$bg;
+  padding: 23px 0;
+
+  &__inner {
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    margin-bottom: 35px;
+  }
+
+  &__info-phone {
+    margin-bottom: 8px;
+  }
+
+  &__info-text {
+    font-size: 18px;
+    line-height: 1.16;
+    color: v.$grey;
+    font-style: normal;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 60px;
+    margin-right: auto;
+    margin-left: 115px;
+  }
+
+  &__item {
+    max-width: 130px;
+  }
+
+  &__item-title {
+    @include v.ralewayMedium;
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+
+  &__list-item + &__list-item {
+    margin-top: 6px;
+  }
+
+  &__list-link {
+    font-size: 18px;
+    line-height: 1.5;
+    color: v.$grey;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 10px !important;
+    line-height: 0;
+
+    &__link,
+    &__image {
+      transition: background-color 0.3s ease, fill 0.3s ease;
+    }
+
+    &__link {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: transparent;
+
+      &:hover .footer-social__icon {
+        fill: v.$green;
+      }
+
+      &:focus {
+        background: v.$colorBtnFocus;
+
+        .footer-social__icon {
+          fill: v.$green;
+        }
+      }
+
+      &:active {
+        background: transparent;
+
+        .footer-social__icon {
+          fill: v.$colorBtnActive;
+        }
+      }
+    }
+
+    &__icon {
+      width: 18px;
+      height: 18px;
+      fill: v.$black;
+      stroke: none;
+    }
+  }
+
+  &__bar {
+    max-width: 132px;
+    color: v.$grey;
+  }
+
+  &__bar-text {
+    font-size: 12px;
+    line-height: 1.2;
+
+    p + p {
+      margin-top: 6px;
+    }
+  }
+}

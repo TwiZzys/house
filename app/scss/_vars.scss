@@ -1,0 +1,21 @@
+$black: #2c2d35;
+$grey: #86928b;
+$green: #598d66;
+$bg: #e1ede6;
+$white: #f4f6f5;
+$colorBtnActive: #376b44;
+$colorBtnFocus: #d4e8d9;
+$orange: #eedb6d;
+
+@mixin ralewayMedium {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+}
+
+@mixin background-webp($img-name, $path: "../images", $repeat: no-repeat, $position: center, $size: cover) {
+  background: url("#{$path}/#{$img-name}.jpg") $repeat $position/$size;
+
+  @supports (background-image: url("#{$path}/#{$img-name}.webp")) {
+    background: url("#{$path}/#{$img-name}.webp") $repeat $position/$size;
+  }
+}

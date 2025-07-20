@@ -1,0 +1,43 @@
+@use "vars" as v;
+
+body {
+  @include v.ralewayMedium;
+  font-size: 20px;
+  line-height: 1.15;
+  color: v.$black;
+}
+
+.container {
+  max-width: 1160px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.button {
+  padding: 21px 60px;
+  border: 1px solid v.$green;
+  color: v.$green;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background: v.$green;
+    color: v.$white;
+  }
+
+  &:focus {
+    background: v.$colorBtnFocus;
+    color: v.$green;
+  }
+
+  &:active {
+    background: v.$colorBtnActive;
+    color: #fff;
+  }
+}
+
+.title {
+  @include v.ralewayMedium;
+  font-size: 40px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
